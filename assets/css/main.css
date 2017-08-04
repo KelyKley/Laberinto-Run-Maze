@@ -1,0 +1,27 @@
+*{
+}
+
+.negro{
+	background-color: black;
+}
+
+.blanco{
+	color: white;
+}
+
+.final{
+	background-color: salmon;
+}
+.inicio{
+	background-color: grey;
+	border-radius: 50%;
+}
+
+table{
+	width: 50%;
+	height: 50%;
+}
+
+button{
+	border: 1px solid white;
+}
