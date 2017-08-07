@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Advent+Pro|Monoton');
 
 *{
-	font-family: arial;
 	overflow: hidden;
+	margin: 6px;
 }
 
 .negro{
@@ -23,13 +23,6 @@
 	color: yellow;
 }
 
-table{
-	width: 45%;
-	height: 40%;
-	float: right;
-	padding-right: 70px;
-}
-
 #redondo{
     background: red;
     width:16px;
@@ -45,32 +38,54 @@ h1{
 	font-family: 'Monoton', cursive;
 	font-size: 60px;
 	color: grey;
+	padding: 17px;
 }
 
 h1:hover{
 	color: black;
-	font-size: 63px;
 }
 
 h3{
 	text-shadow: 5px 5px 5px gray;
-	padding-right: 440px;
-	margin: 0 auto;
-	width: 30%;
-	text-align: left;
+	text-align: center;
 	font-size: 40px;
 	font-family: 'Advent Pro', sans-serif;
 }
 
 p{
-	padding-left: 25px;
 	text-align: center;
 	font-size: 30px;
-	float: left;
 	font-family: 'Advent Pro', sans-serif;
 }
 
 tr, td{
 	width: 40px;
     height: 40px;
+}
+
+#cont{
+	width: 40%;
+	float: left;
+}
+
+#cuadro{
+	width: 50%;
+	float: right;
+}
+
+p, h1, h3, table {
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
