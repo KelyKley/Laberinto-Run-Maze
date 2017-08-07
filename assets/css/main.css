@@ -2,6 +2,7 @@
 
 *{
 	font-family: arial;
+	overflow: hidden;
 }
 
 .negro{
@@ -40,21 +41,29 @@ table{
 }
 
 h1{
+	margin: 0 auto;
 	font-family: 'Monoton', cursive;
-	font-size: 70px;
+	font-size: 60px;
 	color: grey;
 }
 
+h1:hover{
+	color: black;
+	font-size: 63px;
+}
+
 h3{
-	padding-top: : 5px;
+	text-shadow: 5px 5px 5px gray;
+	padding-right: 440px;
+	margin: 0 auto;
+	width: 30%;
 	text-align: left;
-	padding-left: 250px;
-	font-size: 30px;
+	font-size: 40px;
 	font-family: 'Advent Pro', sans-serif;
 }
 
 p{
-	padding-top: : 5px;
+	padding-left: 25px;
 	text-align: center;
 	font-size: 30px;
 	float: left;
