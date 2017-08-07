@@ -16,6 +16,8 @@ for(var i = 0; i<mapa.length;i++){
     var TR = document.createElement("tr");
     for(var j =0; j<string.length; j++){
         var TD = document.createElement("td");
+        TD.setAttribute("id", i+""+j);
+        
         var text = document.createTextNode(string[j]);
         TD.appendChild(text);
         TR.appendChild(TD);
@@ -27,29 +29,79 @@ for(var i = 0; i<mapa.length;i++){
             TD.setAttribute("class", "final");
         }else{
             TD.setAttribute("class", "inicio");
+            var R = document.createElement("div");
+            R.setAttribute("id", "redondo");
+            TD.appendChild(R);
         }
     }
     tabla.appendChild(TR);
 }
 
-window.onload=function(){document.onkeydown=desplazar};
+window.onload=function(){
+    document.onkeydown=desplazar
+};
     function desplazar(objeto){
     var tecla = objeto.which;
-    
-        var situacionY = document.getElementById("cuadrado").offsetLeft;
-         var situacionX = document.getElementById("cuadrado").offsetTop;
+    var tag_padre = document.getElementById("redondo").parentNode.id;
+    var separa = tag_padre.split("");
+    if (separa.length == 3) {
+        separa[1] = separa[1]+""+separa[2];
+    }
+    var arriba = (separa[0] - 1)+ ""+separa[1];
+    var abajo = (parseInt(separa[0])+1)+""+separa[1];
+    var derecha = separa[0]+ "" + (parseInt(separa[1])+1);
+    var izquierda = separa[0]+""+(parseInt(separa[1])-1);
+
+    var valorArriba = document.getElementById(arriba).textContent;
+    var valorAbajo = document.getElementById(abajo).textContent;
+    var valorDerecha = document.getElementById(derecha).textContent;
+    var valorIzquierda = document.getElementById(izquierda).textContent;
+
+    var situacionY = document.getElementById("redondo").offsetLeft;
+    var situacionX = document.getElementById("redondo").offsetTop;
         switch (tecla){
-            case 37 :   
-                cuadrado.style.left = situacionY-220+"px"; 
+            case 37 :  
+                if(valorIzquierda == "_"){
+                    redondo.style.left = situacionY-220+"px";
+                    var contenido = document.getElementById(tag_padre);
+                    contenido.removeChild(contenido.childNodes[1]);
+                    var R = document.createElement("div");
+                    R.setAttribute("id", "redondo");
+                    document.getElementById(izquierda).appendChild(R); 
+                }
                 break;
+
             case 38 : 
-                cuadrado.style.top = situacionX-220+"px";
+                if (valorArriba == "_") {
+                    redondo.style.top = situacionX-220+"px";
+                    var contenido = document.getElementById(tag_padre);
+                    contenido.removeChild(contenido.childNodes[1]);
+                    var R = document.createElement("div");
+                    R.setAttribute("id", "redondo");
+                    document.getElementById(arriba).appendChild(R);
+                }
                 break;
+
             case 39 :  
-                cuadrado.style.left = situacionY-180+"px";
+                if (valorDerecha== "_") {
+                    redondo.style.left = situacionY-180+"px";
+                    var contenido = document.getElementById(tag_padre);
+                    contenido.removeChild(contenido.childNodes[1]);
+                    var R = document.createElement("div");
+                    R.setAttribute("id", "redondo");
+                    document.getElementById(derecha).appendChild(R);
+                }
                 break;
+
             case 40 : 
-                cuadrado.style.top = situacionX-180+"px";
+                if (valorAbajo == "_") {
+                    redondo.style.top = situacionX-180+"px";
+                    var contenido = document.getElementById(tag_padre);
+                    contenido.removeChild(contenido.childNodes[1]);
+                    var R = document.createElement("div");
+                    R.setAttribute("id", "redondo");
+                    document.getElementById(abajo).appendChild(R);
+                }
                 break;
             default:
                 console.log("pulse otra tecla :(");
