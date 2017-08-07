@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro|Monoton');
+
 *{
+	font-family: arial;
 }
 
 .negro{
@@ -6,22 +9,56 @@
 }
 
 .blanco{
-	color: white;
+	color: transparent;
 }
 
 .final{
 	background-color: salmon;
+	color: salmon;
 }
 .inicio{
-	background-color: grey;
-	border-radius: 50%;
+	background-color: yellow;
+	color: yellow;
 }
 
 table{
-	width: 50%;
+	width: 45%;
 	height: 50%;
 }
 
 button{
+	background: salmon;
 	border: 1px solid white;
+	width: 10%;
+	padding: 10px;
+	border-radius: 50px;
 }
+
+button:hover{
+	background: skyblue;
+}
+
+#cuadrado{
+	left: 185px;
+  	top: 400px;
+    margin:204px;
+    border: solid 1px salmon;
+    background: red;
+    width:16px;
+    height:16px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+h1{
+	font-family: 'Monoton', cursive;
+	font-size: 70px;
+	color: grey;
+}
+
+h3 ,p{
+	font-size: 30px;
+	font-family: 'Advent Pro', sans-serif;
+
+}
+
