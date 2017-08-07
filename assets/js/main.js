@@ -38,7 +38,7 @@ for(var i = 0; i<mapa.length;i++){
 }
 
 window.onload=function(){
-    document.onkeydown=desplazar
+    document.onkeydown=desplazar;
 };
     function desplazar(objeto){
     var tecla = objeto.which;
