@@ -68,11 +68,6 @@ function desplazar(objeto){
     var valorIzquierda = document.getElementById(izquierda).textContent;
     //text.Content = devuelve el contenido textual del nodo.
 
-    var moverY = document.getElementById("redondo").offsetLeft;
-    //propiedad offsetLeft devuelve la posición izquierda (en px).
-    var moverX = document.getElementById("redondo").offsetTop;
-    //propiedad offsetTop devuelve la posición superior (en px).
-
         switch (tecla){
             case 37 :  
                 if(valorIzquierda == "_"){
