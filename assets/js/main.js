@@ -21,7 +21,7 @@ for(var i = 0; i<mapa.length;i++){
         var TD = document.createElement("td");
         TD.setAttribute("id", i+""+j);
 
-//appemdChild = añade un nodo como el último hijo de un nodo.        
+        //appendChild = añade un nodo como el último hijo de un nodo.        
         var text = document.createTextNode(string[j]);
         TD.appendChild(text);
         TR.appendChild(TD);
@@ -43,12 +43,14 @@ for(var i = 0; i<mapa.length;i++){
 }
 
 window.onload=function(){
-    document.onkeydown=desplazar;//evento ONKEYDOWN se produce cuando se presiona una tecla.
+    document.onkeydown=desplazar;
+    //evento ONKEYDOWN se produce cuando se presiona una tecla.
 };
 
 function desplazar(objeto){
     var tecla = objeto.which; //Reconoce la tecla del teclado.
-    var tag_padre = document.getElementById("redondo").parentNode.id;//devuelve el nodo padre del nodo especificado.
+    var tag_padre = document.getElementById("redondo").parentNode.id;
+    //devuelve el nodo padre del nodo especificado.
     var separa = tag_padre.split("");
 
     if (separa.length == 3) {
@@ -64,15 +66,19 @@ function desplazar(objeto){
     var valorAbajo = document.getElementById(abajo).textContent;
     var valorDerecha = document.getElementById(derecha).textContent;
     var valorIzquierda = document.getElementById(izquierda).textContent;
+    //text.Content = devuelve el contenido textual del nodo.
 
-    var situacionY = document.getElementById("redondo").offsetLeft;
-    var situacionX = document.getElementById("redondo").offsetTop;
+    var moverY = document.getElementById("redondo").offsetLeft;
+    //propiedad offsetLeft devuelve la posición izquierda (en px).
+    var moverX = document.getElementById("redondo").offsetTop;
+    //propiedad offsetTop devuelve la posición superior (en px).
+
         switch (tecla){
             case 37 :  
                 if(valorIzquierda == "_"){
-                    redondo.style.left = situacionY-220+"px";
                     var contenido = document.getElementById(tag_padre);
                     contenido.removeChild(contenido.childNodes[1]);
+
                     var crearMovil = document.createElement("div");
                     crearMovil.setAttribute("id", "redondo");
                     document.getElementById(izquierda).appendChild(crearMovil); 
@@ -81,9 +87,9 @@ function desplazar(objeto){
 
             case 38 : 
                 if (valorArriba == "_") {
-                    redondo.style.top = situacionX-220+"px";
                     var contenido = document.getElementById(tag_padre);
                     contenido.removeChild(contenido.childNodes[1]);
+
                     var crearMovil = document.createElement("div");
                     crearMovil.setAttribute("id", "redondo");
                     document.getElementById(arriba).appendChild(crearMovil);
@@ -92,9 +98,9 @@ function desplazar(objeto){
 
             case 39 :  
                 if (valorDerecha== "_") {
-                    redondo.style.left = situacionY-180+"px";
                     var contenido = document.getElementById(tag_padre);
                     contenido.removeChild(contenido.childNodes[1]);
+
                     var crearMovil = document.createElement("div");
                     crearMovil.setAttribute("id", "redondo");
                     document.getElementById(derecha).appendChild(crearMovil);
@@ -103,9 +109,9 @@ function desplazar(objeto){
 
             case 40 : 
                 if (valorAbajo == "_") {
-                    redondo.style.top = situacionX-180+"px";
                     var contenido = document.getElementById(tag_padre);
                     contenido.removeChild(contenido.childNodes[1]);
+
                     var crearMovil = document.createElement("div");
                     crearMovil.setAttribute("id", "redondo");
                     document.getElementById(abajo).appendChild(crearMovil);
@@ -116,26 +122,3 @@ function desplazar(objeto){
         }
 }
 
-/* 
-var teclas = {
-  UP: 38,
-  DOWN: 40,
-  LEFT: 37,
-  RIGHT: 39
-};
-  document.addEventListener('keydown',function(){ 
-            switch(window.event.keyCode){ 
-                case 37: 
-                    console.log("LEFT");
-                break; 
-                case 38: 
-                    console.log("UP"); 
-                break; 
-                case 39: 
-                    console.log("RIGHT");
-                break; 
-                case 40: 
-                    console.log("DOWN"); 
-                break; 
-            } 
-        }, false);*/
