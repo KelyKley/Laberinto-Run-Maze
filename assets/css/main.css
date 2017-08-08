@@ -2,7 +2,6 @@
 
 *{
 	overflow: hidden;
-	margin: 6px;
 }
 
 .negro{
@@ -24,9 +23,8 @@
 }
 
 #redondo{
+	border: none;
     background: red;
-    width:16px;
-    height:16px;
     position: inherit;
     border-radius: 50%;
     width: 15px;
@@ -38,7 +36,7 @@ h1{
 	font-family: 'Monoton', cursive;
 	font-size: 60px;
 	color: grey;
-	padding: 17px;
+	padding: 14px;
 }
 
 h1:hover{
@@ -58,18 +56,18 @@ p{
 	font-family: 'Advent Pro', sans-serif;
 }
 
-tr, td{
-	width: 40px;
-    height: 40px;
+td{
+	width: 52px;
+    height: 43px;
 }
 
 #cont{
-	width: 40%;
+	width: 30%;
 	float: left;
 }
 
 #cuadro{
-	width: 50%;
+	width: 68%;
 	float: right;
 }
 
