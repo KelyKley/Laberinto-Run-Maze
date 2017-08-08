@@ -110,6 +110,9 @@ function desplazar(objeto){
                     var crearMovil = document.createElement("div");
                     crearMovil.setAttribute("id", "redondo");
                     document.getElementById(abajo).appendChild(crearMovil);
+                } 
+                else if (valorAbajo == "f"){
+                    alert("Ganaste");
                 }
                 break; 
             default:
