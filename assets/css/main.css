@@ -78,6 +78,7 @@ p, h1, h3, table {
   animation-name: slidein;
   animation-iteration-count: 1;
 }
+
 @keyframes slidein {
   from {
     margin-left: 100%;
